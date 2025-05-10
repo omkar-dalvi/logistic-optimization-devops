@@ -1,0 +1,37 @@
+[project]
+name = "logistic-optimization-devops"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["cookiecutter>=2.6.0", "ruff>=0.11.9"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff]
+line-length = 88
+fix = true
+include = ["*.py"]
+output-format = "grouped"
+show-fixes = true
+
+
+[tool.ruff.format]
+docstring-code-format = true
