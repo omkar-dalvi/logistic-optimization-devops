@@ -1,0 +1,56 @@
+[project]
+name = "logistic-optimization-devops"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.4.2",
+    "pandas>=2.2.3",
+    "pydantic>=2.11.4",
+    "scikit-learn>=1.6.1",
+    "uvicorn>=0.34.2",
+]
+
+[dependency-groups]
+dev = [
+    "cookiecutter>=2.6.0",
+    "ipykernel>=6.29.5",
+    "ruff>=0.11.9",
+]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff]
+line-length = 88
+fix = true
+include = ["*.py", "*.ipynb"]
+output-format = "grouped"
+show-fixes = true
+
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.uv.workspace]
+members = [
+    "data",
+    "logistic_optimization/api",
+]
