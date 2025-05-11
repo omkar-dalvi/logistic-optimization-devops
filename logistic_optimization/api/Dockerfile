@@ -4,7 +4,11 @@ FROM python:3.13
 WORKDIR /app
 
 # Copy the requirements file into the container
-COPY requirements.txt .
+COPY logistic_optimization/api/requirements.txt .
+
+COPY logistic_optimization/api .
+
+COPY logistic_optimization/api/rf_model_pipeline_final.pkl .
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
