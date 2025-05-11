@@ -29,7 +29,6 @@ async def predict(data: PredictRequest):
     # Load the pre-trained Random Forest model
     model_path = "./rf_model_pipeline_final.pkl"
     model = joblib.load(model_path)
-    print(model)
 
     # Create a DataFrame from the input data
     input_data = pd.DataFrame(
@@ -73,3 +72,5 @@ async def predict(data: PredictRequest):
 @app.get("/health")
 async def health():
     return {"status": "API is running"}
+
+
