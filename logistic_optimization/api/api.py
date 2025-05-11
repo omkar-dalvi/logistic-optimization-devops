@@ -72,5 +72,3 @@ async def predict(data: PredictRequest):
 @app.get("/health")
 async def health():
     return {"status": "API is running"}
-
-

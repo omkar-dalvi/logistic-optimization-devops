@@ -1,8 +1,8 @@
-import pytest
-from fastapi.testclient import TestClient
 from api.api import app
+from fastapi.testclient import TestClient
 
 client = TestClient(app)
+
 
 def test_health_endpoint():
     response = client.get("/health")
@@ -27,8 +27,7 @@ def test_predict_endpoint_invalid_input():
 
     response = client.post("/predict", json=invalid_input)
     assert response.status_code == 422  # Unprocessable Entity
-    
-    
+
 
 def test_predict_endpoint_missing_field():
     # Define input data with a missing field
